@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hillary Ness Borabo — Hospitality Portfolio</title>
+  <meta name="description" content="Portfolio of Hillary Ness Borabo — Hospitality Management professional based in Zamboanga City, Philippines." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Scroll progress -->
+  <div class="scroll-progress" aria-hidden="true"><span id="scrollBar"></span></div>
+
+  <!-- Section indicator dots -->
+  <aside class="page-nav" aria-hidden="true">
+    <a href="#top"         data-section="top"         data-label="Home"></a>
+    <a href="#about"       data-section="about"       data-label="About"></a>
+    <a href="#homebase"    data-section="homebase"    data-label="Zamboanga"></a>
+    <a href="#disciplines" data-section="disciplines" data-label="Disciplines"></a>
+    <a href="#gallery"     data-section="gallery"     data-label="Gallery"></a>
+    <a href="#work"        data-section="work"        data-label="Experience"></a>
+    <a href="#skills"      data-section="skills"      data-label="Skills"></a>
+    <a href="#edu"         data-section="edu"         data-label="Education"></a>
+    <a href="#contact"     data-section="contact"     data-label="Contact"></a>
+  </aside>
+
+  <!-- Back to top -->
+  <button class="back-to-top" id="backToTop" data-cursor="top" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+    <span>Top</span>
+  </button>
+
+  <!-- Audio toggle -->
+  <button class="audio-toggle" id="audioToggle" data-cursor="sound" aria-label="Toggle background music" aria-pressed="false">
+    <span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+    <span class="audio-toggle__lbl" id="audioLabel">Sound off</span>
+  </button>
+  <audio id="bgm" loop preload="auto">
+    <source src="ROYALTY%20FREE%20Cooking%20Music%20Royalty%20Free%20Boogie%20Music%20Cooking%20Music%20Royalty%20Free%20by%20MUSIC4VIDEO.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- Loader -->
+  <div class="loader" id="loader">
+    <div class="loader__top">
+      <span class="loader__label">
+        <span class="loader__flame" aria-hidden="true"></span>
+        <span>Opening the Kitchen</span>
+      </span>
+      <span class="loader__kitchen">Est. 2026 · Zamboanga</span>
+    </div>
+
+    <!-- 3D kitchen scene -->
+    <div class="loader__scene" aria-hidden="true">
+      <div class="scene3d">
+        <span class="scene3d__disc"></span>
+
+        <span class="steam s-1"></span>
+        <span class="steam s-2"></span>
+        <span class="steam s-3"></span>
+        <span class="steam s-4"></span>
+        <span class="steam s-5"></span>
+
+        <svg class="pot" viewBox="0 0 160 120" aria-hidden="true">
+          <ellipse cx="80" cy="22" rx="56" ry="9" fill="none" stroke="currentColor" stroke-width="1.5"/>
+          <ellipse cx="80" cy="22" rx="52" ry="7" fill="currentColor" opacity=".05"/>
+          <path d="M24 22 L28 96 Q28 106 38 106 L122 106 Q132 106 132 96 L136 22" fill="none" stroke="currentColor" stroke-width="1.5"/>
+          <rect x="6" y="34" width="16" height="6" rx="3" fill="none" stroke="currentColor" stroke-width="1.5"/>
+          <rect x="138" y="34" width="16" height="6" rx="3" fill="none" stroke="currentColor" stroke-width="1.5"/>
+          <line x1="40" y1="50" x2="120" y2="50" stroke="currentColor" stroke-width="1" stroke-dasharray="2 3" opacity=".4"/>
+        </svg>
+
+        <span class="flame">
+          <span class="flame__core"></span>
+          <span class="flame__outer"></span>
+        </span>
+
+        <!-- orbiting whisk -->
+        <div class="orbit">
+          <svg class="whisk" viewBox="0 0 40 100" aria-hidden="true">
+            <line x1="20" y1="0"  x2="20" y2="55" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M20 55 C8 65, 6 85, 20 98 C34 85, 32 65, 20 55 Z" fill="none" stroke="currentColor" stroke-width="1.2"/>
+            <path d="M20 55 C14 68, 13 84, 20 98"  fill="none" stroke="currentColor" stroke-width=".9" opacity=".7"/>
+            <path d="M20 55 C26 68, 27 84, 20 98"  fill="none" stroke="currentColor" stroke-width=".9" opacity=".7"/>
+            <path d="M20 55 C18 70, 18 86, 20 98"  fill="none" stroke="currentColor" stroke-width=".9" opacity=".4"/>
+            <path d="M20 55 C22 70, 22 86, 20 98"  fill="none" stroke="currentColor" stroke-width=".9" opacity=".4"/>
+          </svg>
+        </div>
+
+        <!-- drifting knife -->
+        <svg class="knife" viewBox="0 0 140 20" aria-hidden="true">
+          <path d="M2 10 L100 10 L112 6 L112 14 Z" fill="none" stroke="currentColor" stroke-width="1.2"/>
+          <rect x="100" y="6" width="36" height="8" rx="2" fill="none" stroke="currentColor" stroke-width="1.2"/>
+          <line x1="108" y1="8" x2="134" y2="8" stroke="currentColor" stroke-width=".6" opacity=".5"/>
+          <line x1="108" y1="12" x2="134" y2="12" stroke="currentColor" stroke-width=".6" opacity=".5"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="loader__inner">
+      <span class="loader__phase" id="loaderPhase">Lighting the flame.</span>
+      <span class="loader__count" id="loaderCount">000</span>
+    </div>
+
+    <div class="loader__bar"><span id="loaderBar"></span></div>
+    <div class="loader__ticks" aria-hidden="true">
+      <span>Mise</span>
+      <span>Prep</span>
+      <span>Heat</span>
+      <span>Plate</span>
+      <span>Service</span>
+    </div>
+  </div>
+
+  <!-- Nav -->
+  <header class="nav">
+    <a href="#top" class="nav__logo" data-hover>Lira<span>♡</span></a>
+    <nav class="nav__links">
+      <a href="#disciplines" data-hover data-scramble>Disciplines</a>
+      <a href="#work" data-hover data-scramble>Experience</a>
+      <a href="#skills" data-hover data-scramble>Skills</a>
+      <a href="#contact" data-hover data-scramble>Contact</a>
+    </nav>
+    <div class="nav__ctas">
+      <a href="Hillary-Borabo-CV.pdf" class="nav__cta nav__cta--ghost" download data-hover data-scramble>
+        <span>CV</span>
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 4v12m0 0l-5-5m5 5l5-5M4 20h16"/></svg>
+      </a>
+      <a href="mailto:Liraness@gmail.com" class="nav__cta" data-hover>
+        <span data-scramble>Get in touch</span>
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- Hero -->
+    <section class="hero">
+      <canvas class="stage3d" id="stage3d" aria-hidden="true"></canvas>
+
+      <div class="hero__meta">
+        <span class="tag tag--service" id="nowServing">
+          <span class="tag__dot" aria-hidden="true"></span>
+          <span>Now serving</span>
+          <span class="tag__time" id="nowTime">00:00</span>
+        </span>
+        <span class="tag">Hospitality Management</span>
+        <span class="tag">BSHM · WMSU</span>
+        <span class="tag">Zamboanga City, PH</span>
+      </div>
+
+      <h1 class="hero__title">
+        <span class="line"><span class="line__inner" data-reveal>Hillary Ness</span></span>
+        <span class="line"><span class="line__inner" data-reveal>Borabo<em></em></span></span>
+      </h1>
+
+      <div class="hero__bottom">
+        <p class="hero__lede" data-fade>
+          Hospitality Management student trained from kitchen line to front desk —
+          food preparation, plating, guest service, and hotel operations with a
+          standard of care that shows up in every cover, every room, every guest.
+        </p>
+        <div class="hero__scroll">
+          <span>Scroll</span>
+          <div class="hero__scroll-line"></div>
+        </div>
+      </div>
+
+      <div class="hero__noise" aria-hidden="true"></div>
+    </section>
+
+    <!-- Marquee -->
+    <section class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Mise en place</span><em>✦</em>
+        <span>Food Preparation</span><em>✦</em>
+        <span>Plating</span><em>✦</em>
+        <span>Food &amp; Beverage</span><em>✦</em>
+        <span>Front Office</span><em>✦</em>
+        <span>Guest Relations</span><em>✦</em>
+        <span>Housekeeping</span><em>✦</em>
+        <span>Mise en place</span><em>✦</em>
+        <span>Food Preparation</span><em>✦</em>
+        <span>Plating</span><em>✦</em>
+        <span>Food &amp; Beverage</span><em>✦</em>
+        <span>Front Office</span><em>✦</em>
+        <span>Guest Relations</span><em>✦</em>
+        <span>Housekeeping</span><em>✦</em>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="about" id="about">
+      <div class="section-label"><span>01</span><span>About</span></div>
+      <div class="about__grid">
+        <h2 class="about__text" data-split>
+          Hospitality Management student with hands-on training across culinary
+          prep, food &amp; beverage service, front office, and housekeeping.
+          Built for fast-paced kitchens and full-house weekends — clean stations,
+          smooth covers, and guests who leave cared for.
+        </h2>
+        <div class="about__facts">
+          <div class="fact">
+            <span class="fact__k">Discipline</span>
+            <span class="fact__v">Hospitality Management</span>
+          </div>
+          <div class="fact">
+            <span class="fact__k">Program</span>
+            <span class="fact__v">BSHM — WMSU</span>
+          </div>
+          <div class="fact">
+            <span class="fact__k">Based in</span>
+            <span class="fact__v">Guiwan, Zamboanga City</span>
+          </div>
+          <div class="fact">
+            <span class="fact__k">Status</span>
+            <span class="fact__v">Available for hire</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Home Base — Zamboanga -->
+    <section class="homebase" id="homebase">
+      <div class="section-label"><span>/</span><span>Home Base</span></div>
+
+      <div class="homebase__hero">
+        <figure class="homebase__main" data-parallax="0.08" data-depth="1.2">
+          <img src="images/zamboanga-sunset.jpg" alt="Sunset over Zamboanga City Sea Port" loading="lazy" />
+          <figcaption>Zamboanga Sea Port at dusk</figcaption>
+        </figure>
+        <div class="homebase__intro">
+          <div class="tag">17°N · City of Flowers</div>
+          <h2 class="homebase__title">
+            <span class="line"><span class="line__inner" data-reveal>Zamboanga</span></span>
+            <span class="line"><span class="line__inner" data-reveal>City<em>.</em></span></span>
+          </h2>
+          <p class="homebase__lede" data-fade>
+            A Spanish-tinged port city on Mindanao's southern tip — vintas on
+            the water, kitchens that never sleep, guest service raised on warmth.
+            Home base for the work, the training, and every shift that shaped
+            this résumé.
+          </p>
+          <dl class="homebase__meta">
+            <div><dt>Region</dt><dd>Zamboanga Peninsula, PH</dd></div>
+            <div><dt>Speciality</dt><dd>Coastal &amp; hotel hospitality</dd></div>
+            <div><dt>Training ground</dt><dd>WMSU · Guiwan</dd></div>
+          </dl>
+        </div>
+      </div>
+
+      <div class="homebase__grid">
+        <figure class="hbphoto" data-parallax="0.14" data-depth="1.1">
+          <img src="images/zamboanga-fort.jpg" alt="Fort Pilar Shrine, Zamboanga City" loading="lazy" />
+          <figcaption><span class="hbphoto__k">/ Landmark</span>Fort Pilar</figcaption>
+        </figure>
+        <figure class="hbphoto" data-parallax="0.2" data-depth="0.85">
+          <img src="images/zamboanga-plaza.jpg" alt="Plaza Pershing, downtown Zamboanga" loading="lazy" />
+          <figcaption><span class="hbphoto__k">/ Downtown</span>Plaza Pershing</figcaption>
+        </figure>
+        <figure class="hbphoto" data-parallax="0.1" data-depth="1.3">
+          <img src="images/zamboanga-city.jpg" alt="Zamboanga City from Garden Orchid Hotel" loading="lazy" />
+          <figcaption><span class="hbphoto__k">/ Cityscape</span>From Garden Orchid</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Disciplines (horizontal scroll) -->
+    <section class="disciplines-h" id="disciplines">
+      <div class="disc-sticky">
+        <div class="disc-head">
+          <div class="section-label"><span>02</span><span>Disciplines</span></div>
+          <h3 class="disciplines__heading" data-split>Four floors, one standard <em>—</em></h3>
+          <div class="disc-progress" aria-hidden="true"><span id="discProgress"></span></div>
+        </div>
+
+        <div class="disc-track" id="discTrack">
+          <article class="disc tilt" data-hover data-cursor="drag" data-tilt>
+            <div class="disc__num">
+              <svg class="disc__ico" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M7 10a3 3 0 1 1 2-5 3 3 0 0 1 6 0 3 3 0 1 1 2 5v4H7v-4zM7 16h10v3H7z"/></svg>
+              <span>Station 01</span>
+            </div>
+            <figure class="disc__img">
+              <img src="images/culinary.jpg" alt="Browning beef mince in a kitchen pan" loading="lazy" />
+              <span class="disc__img-grain" aria-hidden="true"></span>
+            </figure>
+            <h4 class="disc__name" data-scramble>Culinary</h4>
+            <p class="disc__desc">
+              Mise en place, ingredient prep, knife work, dishwashing, and
+              all-rounder kitchen support. Working a station cleanly, pacing
+              with the line, and keeping the pass moving.
+            </p>
+            <ul class="disc__tags">
+              <li>Food Preparation</li>
+              <li>Mise en place</li>
+              <li>Dishwashing</li>
+              <li>Plating</li>
+              <li>Kitchen Sanitation</li>
+            </ul>
+          </article>
+
+          <article class="disc tilt" data-hover data-cursor="drag" data-tilt>
+            <div class="disc__num">
+              <svg class="disc__ico" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M7 3h10l-1 8a4 4 0 0 1-8 0L7 3zM12 15v6M9 21h6"/></svg>
+              <span>Station 02</span>
+            </div>
+            <figure class="disc__img">
+              <img src="images/breakfast.jpg" alt="Cooking a hearty breakfast on a griddle" loading="lazy" />
+              <span class="disc__img-grain" aria-hidden="true"></span>
+            </figure>
+            <h4 class="disc__name" data-scramble>Food &amp; Beverage</h4>
+            <p class="disc__desc">
+              Service flow from open to close — setup, beverage service, clearing,
+              and maintaining F&amp;B equipment. Turning covers without losing
+              the warmth that makes a guest come back.
+            </p>
+            <ul class="disc__tags">
+              <li>Table Service</li>
+              <li>Banquet Setup</li>
+              <li>Equipment Maintenance</li>
+              <li>Upselling</li>
+              <li>Bar Support</li>
+            </ul>
+          </article>
+
+          <article class="disc tilt" data-hover data-cursor="drag" data-tilt>
+            <div class="disc__num">
+              <svg class="disc__ico" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 18a6 6 0 0 1 12 0v1H6v-1zM12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM12 21v1"/></svg>
+              <span>Station 03</span>
+            </div>
+            <figure class="disc__img">
+              <img src="images/fnb.jpg" alt="Asparagus and fresh bread composition" loading="lazy" />
+              <span class="disc__img-grain" aria-hidden="true"></span>
+            </figure>
+            <h4 class="disc__name" data-scramble>Front Office</h4>
+            <p class="disc__desc">
+              Guest Relations, check-in &amp; check-out flow, communication
+              systems, and escalation to supervisors. First voice on the phone,
+              first smile at the desk.
+            </p>
+            <ul class="disc__tags">
+              <li>Guest Relations</li>
+              <li>Check-in / Check-out</li>
+              <li>PBX &amp; Comms</li>
+              <li>Concierge Support</li>
+            </ul>
+          </article>
+
+          <article class="disc tilt" data-hover data-cursor="drag" data-tilt>
+            <div class="disc__num">
+              <svg class="disc__ico" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3l2 10 4-2-1 5H7l-1-5 4 2 2-10zM5 21h14"/></svg>
+              <span>Station 04</span>
+            </div>
+            <figure class="disc__img">
+              <img src="images/hk-mandarin.jpg" alt="A turned-down hotel suite with a freshly made bed" loading="lazy" />
+              <span class="disc__img-grain" aria-hidden="true"></span>
+            </figure>
+            <h4 class="disc__name" data-scramble>Housekeeping</h4>
+            <p class="disc__desc">
+              Room readiness, public-area upkeep, and regular inspection of
+              cleaning equipment. Documenting issues, partnering with supervisors,
+              keeping standards above the guest's eye-line.
+            </p>
+            <ul class="disc__tags">
+              <li>Room Make-up</li>
+              <li>Public Attendant</li>
+              <li>Inspection</li>
+              <li>Linen &amp; Laundry</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats" id="stats">
+      <div class="stats__row">
+        <div class="stat">
+          <div class="stat__num" data-count="4">0</div>
+          <div class="stat__lbl">Hospitality Roles</div>
+        </div>
+        <div class="stat">
+          <div class="stat__num" data-count="4">0</div>
+          <div class="stat__lbl">Core Disciplines</div>
+        </div>
+        <div class="stat">
+          <div class="stat__num" data-count="3">0</div>
+          <div class="stat__lbl">Training Certificates</div>
+        </div>
+        <div class="stat">
+          <div class="stat__num" data-count="2" data-suffix="+">0</div>
+          <div class="stat__lbl">Years On The Floor</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="gallery" id="gallery">
+      <div class="section-label"><span>/</span><span>Gallery · On the line</span></div>
+      <div class="gallery__strip" id="galleryStrip">
+        <figure class="gphoto" data-depth="1.2" data-parallax="0.18">
+          <img src="images/culinary.jpg" alt="Mince beef browning in a pan" loading="lazy" />
+          <figcaption><span class="gphoto__k">/ 01</span>Kitchen action</figcaption>
+        </figure>
+        <figure class="gphoto gphoto--tall" data-depth="0.8" data-parallax="0.24">
+          <img src="images/dumplings.jpg" alt="Adding dumplings to beef stew" loading="lazy" />
+          <figcaption><span class="gphoto__k">/ 02</span>Prep</figcaption>
+        </figure>
+        <figure class="gphoto" data-depth="1.4" data-parallax="0.14">
+          <img src="images/breakfast.jpg" alt="Cooking English breakfast on a griddle" loading="lazy" />
+          <figcaption><span class="gphoto__k">/ 03</span>Service</figcaption>
+        </figure>
+        <figure class="gphoto gphoto--short" data-depth="0.9" data-parallax="0.3">
+          <img src="images/batter.jpg" alt="Whisked batter in a glass bowl" loading="lazy" />
+          <figcaption><span class="gphoto__k">/ 04</span>Mise en place</figcaption>
+        </figure>
+        <figure class="gphoto" data-depth="1.1" data-parallax="0.2">
+          <img src="images/fnb.jpg" alt="Asparagus and bread plating" loading="lazy" />
+          <figcaption><span class="gphoto__k">/ 05</span>Plating</figcaption>
+        </figure>
+        <figure class="gphoto gphoto--tall" data-depth="0.7" data-parallax="0.26">
+          <img src="images/prep.jpg" alt="Baking biscuits" loading="lazy" />
+          <figcaption><span class="gphoto__k">/ 06</span>Bake</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Experience / Work -->
+    <section class="work" id="work">
+      <div class="section-label"><span>03</span><span>Experience</span></div>
+
+      <h3 class="work__heading" data-split>On the floor <em>—</em></h3>
+
+      <div class="work__list">
+
+        <article class="job tilt" data-hover data-cursor="view" data-tilt>
+          <div class="job__num">01</div>
+          <div class="job__role">
+            <h4 data-scramble>Culinary &amp; Front Desk II</h4>
+            <span class="job__place">Astoria Hotel — Astoria Plaza, Ortigas</span>
+            <span class="job__chips">
+              <i>Front Office</i><i>Guest Relations</i><i>Culinary Support</i>
+            </span>
+          </div>
+          <div class="job__year">Feb – Mar 2026</div>
+          <p class="job__desc">
+            Ran guest relations at the front desk — check-in flow, PBX and
+            in-house communication, and concierge-style requests. Supported
+            culinary rotations when needed and escalated equipment or service
+            issues to supervisors for prompt resolution.
+          </p>
+        </article>
+
+        <article class="job tilt" data-hover data-cursor="view" data-tilt>
+          <div class="job__num">02</div>
+          <div class="job__role">
+            <h4 data-scramble>Food &amp; Beverage</h4>
+            <span class="job__place">Astoria Regency — Pasonanca Rd, Zamboanga</span>
+            <span class="job__chips">
+              <i>F&amp;B Service</i><i>Station Setup</i><i>Sanitation</i>
+            </span>
+          </div>
+          <div class="job__year">Sep 2025</div>
+          <p class="job__desc">
+            Worked F&amp;B service — station setup, covers through the rush,
+            and resetting between seatings. Conducted regular inspection and
+            maintenance of service and cleaning equipment, identifying issues
+            early and surfacing them to supervisors.
+          </p>
+        </article>
+
+        <article class="job tilt" data-hover data-cursor="view" data-tilt>
+          <div class="job__num">03</div>
+          <div class="job__role">
+            <h4 data-scramble>Assistant Cook / Dishwasher / All-Rounder</h4>
+            <span class="job__place">Fourbzz — Sta. Maria Rd, Zamboanga</span>
+            <span class="job__chips">
+              <i>Food Prep</i><i>Mise en place</i><i>Dishwashing</i><i>Line Support</i>
+            </span>
+          </div>
+          <div class="job__year">Jul – Oct 2025</div>
+          <p class="job__desc">
+            In the kitchen: mise en place, ingredient prep, hot and cold side
+            support, plating assistance, and dishwashing through service. Kept
+            stations stocked, sanitation above standard, and the pass moving
+            so the team never broke rhythm.
+          </p>
+        </article>
+
+        <article class="job tilt" data-hover data-cursor="view" data-tilt>
+          <div class="job__num">04</div>
+          <div class="job__role">
+            <h4 data-scramble>Public Attendant</h4>
+            <span class="job__place">Astoria Hotel — Astoria Plaza, Ortigas</span>
+            <span class="job__chips">
+              <i>Housekeeping</i><i>Public Areas</i><i>Equipment Upkeep</i>
+            </span>
+          </div>
+          <div class="job__year">Feb 2024</div>
+          <p class="job__desc">
+            Maintained public-area cleanliness to hotel standard, handled
+            routine upkeep of housekeeping equipment, and documented faults
+            for supervisor action — keeping lobbies, corridors, and common
+            spaces guest-ready through the day.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="skills" id="skills">
+      <div class="section-label"><span>04</span><span>Capabilities</span></div>
+
+      <div class="skills__cat">
+        <h4 class="skills__cat-title">Kitchen &amp; Culinary</h4>
+        <div class="skills__grid">
+          <div class="skill">
+            <span class="skill__name">Food Preparation</span>
+            <div class="skill__bar"><i style="--v:92%"></i></div>
+            <span class="skill__val">92</span>
+          </div>
+          <div class="skill">
+            <span class="skill__name">Mise en place</span>
+            <div class="skill__bar"><i style="--v:90%"></i></div>
+            <span class="skill__val">90</span>
+          </div>
+          <div class="skill">
+            <span class="skill__name">Food Handling &amp; Safety</span>
+            <div class="skill__bar"><i style="--v:93%"></i></div>
+            <span class="skill__val">93</span>
+          </div>
+          <div class="skill">
+            <span class="skill__name">Dishwashing &amp; Sanitation</span>
+            <div class="skill__bar"><i style="--v:96%"></i></div>
+            <span class="skill__val">96</span>
+          </div>
+          <div class="skill">
+            <span class="skill__name">Plating &amp; Presentation</span>
+            <div class="skill__bar"><i style="--v:84%"></i></div>
+            <span class="skill__val">84</span>
+          </div>
+          <div class="skill">
+            <span class="skill__name">Knife Skills</span>
+            <div class="skill__bar"><i style="--v:82%"></i></div>
+            <span class="skill__val">82</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="skills__cat">
+        <h4 class="skills__cat-title">Service &amp; Front Office</h4>
+        <div class="skills__grid">
+          <div class="skill">
+            <span class="skill__name">Food &amp; Beverage Service</span>
+            <div class="skill__bar"><i style="--v:89%"></i></div>
+            <span class="skill__val">89</span>
+          </div>
+          <div class="skill">
+            <span class="skill__name">Guest Relations</span>
+            <div class="skill__bar"><i style="--v:88%"></i></div>
+            <span class="skill__val">88</span>
+          </div>
+          <div class="skill">
+            <span class="skill__name">Front Desk Operations</span>
+            <div class="skill__bar"><i style="--v:85%"></i></div>
+            <span class="skill__val">85</span>
+          </div>
+          <div class="skill">
+            <span class="skill__name">Banquet &amp; Event Setup</span>
+            <div class="skill__bar"><i style="--v:80%"></i></div>
+            <span class="skill__val">80</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="skills__cat">
+        <h4 class="skills__cat-title">Housekeeping &amp; Core</h4>
+        <div class="skills__grid">
+          <div class="skill">
+            <span class="skill__name">Housekeeping</span>
+            <div class="skill__bar"><i style="--v:95%"></i></div>
+            <span class="skill__val">95</span>
+          </div>
+          <div class="skill">
+            <span class="skill__name">Equipment Maintenance</span>
+            <div class="skill__bar"><i style="--v:88%"></i></div>
+            <span class="skill__val">88</span>
+          </div>
+          <div class="skill">
+            <span class="skill__name">Attention to Detail</span>
+            <div class="skill__bar"><i style="--v:94%"></i></div>
+            <span class="skill__val">94</span>
+          </div>
+          <div class="skill">
+            <span class="skill__name">Adaptability</span>
+            <div class="skill__bar"><i style="--v:92%"></i></div>
+            <span class="skill__val">92</span>
+          </div>
+          <div class="skill">
+            <span class="skill__name">Team Collaboration</span>
+            <div class="skill__bar"><i style="--v:96%"></i></div>
+            <span class="skill__val">96</span>
+          </div>
+          <div class="skill">
+            <span class="skill__name">Multitasking Under Pressure</span>
+            <div class="skill__bar"><i style="--v:93%"></i></div>
+            <span class="skill__val">93</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education & Certificates -->
+    <section class="edu" id="edu">
+      <div class="section-label"><span>05</span><span>Education &amp; Training</span></div>
+
+      <div class="edu__cols">
+        <div class="edu__col">
+          <h3 class="edu__title" data-split>Education</h3>
+          <ul class="edu__list">
+            <li>
+              <span class="edu__year">2022 — Present</span>
+              <span class="edu__name">Western Mindanao State University</span>
+              <span class="edu__note">Bachelor of Science in Hospitality Management (BSHM)</span>
+            </li>
+            <li>
+              <span class="edu__year">2016 — 2022</span>
+              <span class="edu__name">Marcelo Spinola School</span>
+              <span class="edu__note">Secondary Education</span>
+            </li>
+            <li>
+              <span class="edu__year">2010 — 2016</span>
+              <span class="edu__name">Ipil SDA Elementary School</span>
+              <span class="edu__note">Primary Education</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="edu__col">
+          <h3 class="edu__title" data-split>Hospitality Training</h3>
+          <ul class="edu__list">
+            <li>
+              <span class="edu__year">Feb 2026</span>
+              <span class="edu__name">MacroAsia</span>
+              <span class="edu__note">Catering &amp; hospitality services · Certificate of Attendance</span>
+            </li>
+            <li>
+              <span class="edu__year">Feb 2024</span>
+              <span class="edu__name">MIHCA</span>
+              <span class="edu__note">Manila International Hospitality &amp; Culinary Academy · Certificate of Attendance</span>
+            </li>
+            <li>
+              <span class="edu__year">Feb 2024</span>
+              <span class="edu__name">TGIF</span>
+              <span class="edu__note">Restaurant service &amp; F&amp;B operations · Certificate of Attendance</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+      <div class="section-label"><span>06</span><span>Contact</span></div>
+
+      <h2 class="contact__title">
+        <span class="line"><span class="line__inner" data-reveal>Bring me</span></span>
+        <span class="line"><span class="line__inner" data-reveal>on the <em>floor.</em></span></span>
+      </h2>
+
+      <a href="mailto:Liraness@gmail.com" class="contact__mail" data-hover data-scramble>
+        Liraness@gmail.com
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M8 7h9v9"/></svg>
+      </a>
+
+      <a href="Hillary-Borabo-CV.pdf" class="contact__cv" download data-hover>
+        <span class="contact__cv-k">Résumé</span>
+        <span class="contact__cv-name" data-scramble>Download CV</span>
+        <span class="contact__cv-meta">PDF · 188 KB</span>
+        <svg class="contact__cv-ico" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 4v12m0 0l-5-5m5 5l5-5M4 20h16"/></svg>
+      </a>
+
+      <div class="contact__grid">
+        <div>
+          <span class="k">Phone</span>
+          <a href="tel:+639102711545" data-hover>+63 910 271 1545</a>
+        </div>
+        <div>
+          <span class="k">Location</span>
+          <p>Guiwan, Zamboanga City, Philippines 7000</p>
+        </div>
+        <div>
+          <span class="k">Status</span>
+          <p><i class="dot"></i> Available for opportunities</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="foot">
+      <div class="foot__motto" aria-hidden="true">
+        <i class="dashline" aria-hidden="true"></i>
+        <span>Mise en place — everything, and every guest, in its place.</span>
+        <i class="dashline" aria-hidden="true"></i>
+      </div>
+      <div class="foot__row">
+        <span>© 2026 Hillary Ness Borabo</span>
+        <span class="foot__recipe">Cooked<em>·</em>Served<em>·</em>Cleaned<em>·</em>Repeat</span>
+        <a href="#top" data-hover>Back to top ↑</a>
+      </div>
+      <div class="foot__signoff">
+        <span class="foot__k">Developed by</span>
+        <a href="https://dz1an.github.io/" target="_blank" rel="noopener" class="foot__dev" data-hover data-scramble>
+          John Kent Evangelista
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
+        </a>
+      </div>
+      <div class="foot__credits">
+        <span class="foot__k">Soundtrack</span>
+        <p>
+          <em>"Boogie"</em> — Cooking Music, royalty-free via
+          <a href="https://www.youtube.com/watch?v=Xiop2yTFB0s" target="_blank" rel="noopener" data-hover>Music for Video Library</a>.
+          Used with credit under the channel's royalty-free license.
+        </p>
+      </div>
+      <div class="foot__credits">
+        <span class="foot__k">Photography</span>
+        <p>
+          Food &amp; kitchen imagery courtesy of
+          <a href="https://freefoodphotos.com/" target="_blank" rel="noopener" data-hover>freefoodphotos.com</a>
+          (<a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noopener" data-hover>CC BY 3.0</a>).
+          Zamboanga City &amp; hotel interior imagery via
+          <a href="https://commons.wikimedia.org/" target="_blank" rel="noopener" data-hover>Wikimedia Commons</a>
+          contributors, variously licensed under CC BY / CC BY-SA.
+        </p>
+      </div>
+      <div class="foot__big" aria-hidden="true">Borabo.</div>
+    </footer>
+
+  </main>
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+    }
+  }
+  </script>
+  <script src="https://unpkg.com/lenis@1.0.45/dist/lenis.min.js"></script>
+  <script type="module" src="stage3d.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
