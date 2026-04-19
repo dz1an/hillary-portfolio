@@ -418,6 +418,11 @@ img { max-width: 100%; display: block; }
 @media (max-width: 780px) {
   .nav__cta--ghost span { display: none; }
   .nav__cta--ghost { padding: 10px; }
+  .nav__cta { font-size: 11px; padding: 8px 12px; }
+}
+@media (max-width: 420px) {
+  .nav__cta:not(.nav__cta--ghost) span { display: none; }
+  .nav__cta:not(.nav__cta--ghost) { padding: 10px; }
 }
 
 @media (max-width: 780px) {
@@ -556,6 +561,39 @@ main { display: block; }
   0% { transform: translateX(-100%); }
   50% { transform: translateX(0); }
   100% { transform: translateX(100%); }
+}
+
+/* ---------- Mobile hero ---------- */
+@media (max-width: 780px) {
+  .hero { padding: 100px 20px 28px; }
+  .hero__meta { gap: 8px; }
+  .tag { font-size: 10px; letter-spacing: .22em; padding: 5px 10px; }
+  .tag--service { padding-left: 8px; }
+  .tag__time { padding-left: 8px; }
+  .hero__title {
+    font-size: clamp(54px, 18vw, 120px);
+    margin: 28px 0;
+  }
+  .hero__bottom { flex-direction: column; align-items: flex-start; gap: 28px; }
+  .hero__lede { font-size: 14px; max-width: 100%; }
+  .hero__scroll-line { width: 40px; }
+}
+
+/* Reduce motion-heavy effects on phones */
+@media (max-width: 780px) {
+  .tilt { transform: none !important; }
+  .gallery__strip { transform: none !important; }
+  .scene3d__disc { display: none; }
+  .knife { display: none; }
+  .s-4, .s-5 { display: none; }
+}
+
+/* On truly small screens, kill parallax translate to avoid jank */
+@media (max-width: 520px) {
+  [data-parallax] { transform: none !important; }
+  .homebase__main img,
+  .hbphoto img,
+  .gphoto img { transform: none; }
 }
 
 /* grain */
